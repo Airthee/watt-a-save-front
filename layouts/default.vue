@@ -1,5 +1,14 @@
 <template>
   <div>
+    <section class="hero is-medium is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Watt A Save !
+          </h1>
+        </div>
+      </div>
+    </section>
     <nuxt />
   </div>
 </template>
