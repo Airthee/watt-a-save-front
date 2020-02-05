@@ -85,9 +85,7 @@ export default {
       })
 
       // Draw data
-      return {
-        labels: 
-      }
+      return dataFiltered
     }
   },
 
