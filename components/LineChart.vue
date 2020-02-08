@@ -7,8 +7,8 @@ export default {
   mixins: [reactiveProp],
   props: {
     options: {
-      type: Array,
-      required: true
+      type: Object,
+      default: null
     }
   },
   mounted () {

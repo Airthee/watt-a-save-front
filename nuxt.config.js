@@ -1,3 +1,4 @@
+require('dotenv').config()
 
 export default {
   mode: 'spa',
@@ -19,6 +20,7 @@ export default {
   ** Customize the progress-bar color
   */
   loading: { color: '#fff' },
+  // loading: '~/components/Loader.vue', // Custom loading
   /*
   ** Global CSS
   */
