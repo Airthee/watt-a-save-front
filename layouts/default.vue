@@ -6,6 +6,9 @@
           <h1 class="title">
             Watt A Save !
           </h1>
+          <h2 class="subtitle">
+            See the energy consumption of classrooms and offices over a period of time!
+          </h2>
         </div>
       </div>
     </section>

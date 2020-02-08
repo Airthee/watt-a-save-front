@@ -1,13 +1,6 @@
 <template>
   <section class="section">
     <div class="container">
-      <h1 class="title">
-        Section
-      </h1>
-      <h2 class="subtitle">
-        See the energy consumption of all your classes. Compare consuption by time or by bench !
-      </h2>
-
       <div>
         <div class="field">
           <label class="label">Date de début</label>
