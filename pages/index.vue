@@ -5,27 +5,27 @@
         Section
       </h1>
       <h2 class="subtitle">
-        A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+        See the energy consumption of all your classes. Compare consuption by time or by bench !
       </h2>
 
       <div>
         <div class="field">
           <label class="label">Date de début</label>
           <div class="control">
-            <datepicker @selected="updateDatacollection()" v-model="startDate" :clear-button="true" />
+            <datepicker v-model="startDate" :clear-button="true" />
           </div>
         </div>
         <div class="field">
           <label class="label">Date de fin</label>
           <div class="control">
-            <datepicker @selected="updateDatacollection()" v-model="endDate" :clear-button="true" />
+            <datepicker v-model="endDate" :clear-button="true" />
           </div>
         </div>
         <div class="field">
           <label class="label">Classe</label>
           <div class="control">
             <div class="select">
-              <select @change="updateDatacollection()" v-model="inputClassroom">
+              <select v-model="inputClassroom">
                 <option :value="0">
                   Selectionner une classe
                 </option>
@@ -75,6 +75,18 @@ export default {
     }
   },
 
+  watch: {
+    startDate () {
+      this.updateDatacollection()
+    },
+    endDate () {
+      this.updateDatacollection()
+    },
+    inputClassroom () {
+      this.updateDatacollection()
+    }
+  },
+
   mounted () {
     // Chargement des données
     // Récupération de toutes les salles de classes
@@ -117,12 +129,12 @@ export default {
         }
 
         // Filter data
-        axiosParams.before = this.startDate ? this.$moment(this.startDate).format('YYYY-MM-DD HH-mm-ss') : null
-        axiosParams.after = this.endDate ? this.$moment(this.endDate).format('YYYY-MM-DD HH-mm-ss') : null
+        axiosParams.after = this.startDate ? this.$moment(this.startDate).format('YYYY-MM-DD HH:mm:ss') : null
+        axiosParams.before = this.endDate ? this.$moment(this.endDate).format('YYYY-MM-DD HH:mm:ss') : null
         axiosParams.bench_id = null
         axiosParams.room_id = this.classroomId || null
 
-        this.$axios.get('/measures', axiosParams)
+        this.$axios.get('/measures', { params: axiosParams })
           .then((response) => {
             const allMeasures = response.data.data
             // Group by bench
