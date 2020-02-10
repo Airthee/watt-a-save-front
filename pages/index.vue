@@ -146,7 +146,7 @@ export default {
               })
 
               // Create 100 groups
-              const measuresByGroup = parseInt(benchMeasures.length / 100)
+              const measuresByGroup = benchMeasures.length > 100 ? parseInt(benchMeasures.length / 100) : benchMeasures.length
               while (benchMeasures.length > 0) {
                 const groupValues = benchMeasures.splice(0, measuresByGroup)
                 const refValue = groupValues[0]
