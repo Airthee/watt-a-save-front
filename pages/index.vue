@@ -5,13 +5,13 @@
         <div class="field">
           <label class="label">Date de début</label>
           <div class="control">
-            <datetime v-model="startDate" type="datetime" class="datetime-green" />
+            <datetime v-model="startDate" type="datetime" />
           </div>
         </div>
         <div class="field">
           <label class="label">Date de fin</label>
           <div class="control">
-            <datetime v-model="endDate" type="datetime" class="datetime-green" />
+            <datetime v-model="endDate" type="datetime" />
           </div>
         </div>
         <div class="field">
@@ -45,9 +45,9 @@ export default {
 
   data () {
     return {
-      startDate: new Date('2020-01-01').toISOString(),
-      endDate: new Date().toISOString(),
-      inputClassroom: 0,
+      startDate: localStorage.getItem('startDate') || new Date('2020-01-01').toISOString(),
+      endDate: localStorage.getItem('endDate') || new Date().toISOString(),
+      inputClassroom: localStorage.getItem('inputClassroom') || 0,
       allClassrooms: [],
       allBenches: [],
       measures: [],
@@ -70,12 +70,15 @@ export default {
 
   watch: {
     startDate () {
+      localStorage.setItem('startDate', this.startDate)
       this.updateDatacollection()
     },
     endDate () {
+      localStorage.setItem('endDate', this.endDate)
       this.updateDatacollection()
     },
     inputClassroom () {
+      localStorage.setItem('inputClassroom', this.inputClassroom)
       this.updateDatacollection()
     }
   },
