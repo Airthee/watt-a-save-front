@@ -1,6 +1,8 @@
 # watt-a-save-front
 
-> My first-rate Nuxt.js project
+> See your classroom electrical consumption
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fa6c1518-ee98-4894-88d5-0b0a1814ab65/deploy-status)](https://app.netlify.com/sites/watt-a-save/deploys)
 
 ## Build Setup
 
