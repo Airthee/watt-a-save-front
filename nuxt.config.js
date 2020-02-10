@@ -30,6 +30,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/vue-datetime'
   ],
   /*
   ** Nuxt.js dev-modules

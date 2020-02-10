@@ -5,13 +5,13 @@
         <div class="field">
           <label class="label">Date de début</label>
           <div class="control">
-            <datepicker v-model="startDate" :clear-button="true" />
+            <datetime v-model="startDate" type="datetime" class="datetime-green" />
           </div>
         </div>
         <div class="field">
           <label class="label">Date de fin</label>
           <div class="control">
-            <datepicker v-model="endDate" :clear-button="true" />
+            <datetime v-model="endDate" type="datetime" class="datetime-green" />
           </div>
         </div>
         <div class="field">
@@ -34,19 +34,19 @@
 </template>
 
 <script>
-import Datepicker from 'vuejs-datepicker'
+import { Datetime } from 'vue-datetime'
 import LineChart from '@/components/LineChart'
 
 export default {
   components: {
-    Datepicker,
-    LineChart
+    LineChart,
+    Datetime
   },
 
   data () {
     return {
-      startDate: new Date('2020-01-01'),
-      endDate: new Date(),
+      startDate: new Date('2020-01-01').toISOString(),
+      endDate: new Date().toISOString(),
       inputClassroom: 0,
       allClassrooms: [],
       allBenches: [],
@@ -117,7 +117,7 @@ export default {
         const axiosParams = {}
 
         // If end date, check that it is > to the start date (trigger error)
-        if (this.endDate && this.startDate && this.endDate < this.startDate) {
+        if (this.endDate && this.startDate && new Date(this.endDate) < new Date(this.startDate)) {
           throw new Error('End date must be after start date')
         }
 

@@ -16,9 +16,11 @@
     "@nuxtjs/bulma": "^1.2.1",
     "@nuxtjs/dotenv": "^1.4.0",
     "chart.js": "^2.9.3",
+    "luxon": "^1.22.0",
     "nuxt": "^2.0.0",
     "vue-chartjs": "^3.5.0",
-    "vuejs-datepicker": "^1.6.2"
+    "vue-datetime": "^1.0.0-beta.11",
+    "weekstart": "^1.0.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
