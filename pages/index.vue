@@ -27,6 +27,11 @@
             </div>
           </div>
         </div>
+        <div>
+          <button @click="updateDatacollection" type="button">
+            Refresh
+          </button>
+        </div>
         <LineChart :chart-data="datacollection" :options="chartOptions" class="line-chart" />
       </div>
     </div>
