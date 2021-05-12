@@ -15,7 +15,7 @@
     "@nuxtjs/axios": "^5.9.5",
     "@nuxtjs/bulma": "^1.2.1",
     "@nuxtjs/dotenv": "^1.4.0",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "luxon": "^1.22.0",
     "nuxt": "^2.0.0",
     "vue-chartjs": "^3.5.0",
